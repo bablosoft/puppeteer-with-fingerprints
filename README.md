@@ -30,7 +30,7 @@ Let's look at a small example of **WebGL** property substitution.
 In the screenshot below, the left column shows the values from the regular browser, and the right column shows the values substituted using ready-made fingerprints.
 This result cannot be achieved using only the replacement of various browser properties via **JavaScript**, that's what this plugin and service is for:
 
-![WebGL](https://github.com/CheshireCaat/browser-with-fingerprints/raw/master/assets/webgl.jpg)
+![WebGL](https://github.com/bablosoft/browser-with-fingerprints/raw/master/assets/webgl.jpg)
 
 You can learn more by following this [link](https://fp.bablosoft.com/#capabilities).
 
@@ -216,7 +216,7 @@ After running the updated code, a new fingerprint will be applied each time, so 
 
 ## Common problems
 
-You can find information about known issues related to updates, as well as ways to solve them in [this](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/MIGRATION.md) guide.
+You can find information about known issues related to updates, as well as ways to solve them in [this](https://github.com/bablosoft/browser-with-fingerprints/blob/master/MIGRATION.md) guide.
 
 ## Launching the browser
 
@@ -257,13 +257,13 @@ await browser.close();
 await chrome.close();
 ```
 
-At [this](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/plugin/launcher/index.d.ts#L54) link you can find a detailed description of all the options allowed for **spawn** method.
-The same goes for the return type declaration, details of which can be found [here](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/plugin/launcher/index.d.ts#L6).
+At [this](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/plugin/launcher/index.d.ts#L54) link you can find a detailed description of all the options allowed for **spawn** method.
+The same goes for the return type declaration, details of which can be found [here](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/plugin/launcher/index.d.ts#L6).
 
 If possible, use it only in extreme cases. It is much more convenient to use the **launch** method to launch the browser, which minimizes the number of steps for proper initialization and configuration.
 
 Annotations are described for all plugins methods directly in the library code via the **TypeScript** declarations, so when using it you will be able to see hints for all options and types.
-You can also find out about it directly [here](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts) and [here](src/index.d.ts).
+You can also find out about it directly [here](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts) and [here](src/index.d.ts).
 
 ## Configuring plugin
 
@@ -320,12 +320,12 @@ plugin.useProxy('127.0.0.1:8080').useFingerprint(fingerprint);
 
 Use these links to see a detailed description of the methods:
 
-- [This](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L94) one for the **useFingerprint** method
-  (also see additional options [here](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/types/fingerprint.d.ts#L4)).
-- [This](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L124) one for the **useProfile** method
-  (also see additional options [here](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/types/profile.d.ts#L4)).
-- [This](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L152) one for the **useProxy** method
-  (also see additional options [here](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/types/proxy.d.ts#L24)).
+- [This](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L94) one for the **useFingerprint** method
+  (also see additional options [here](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/types/fingerprint.d.ts#L4)).
+- [This](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L124) one for the **useProfile** method
+  (also see additional options [here](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/types/profile.d.ts#L4)).
+- [This](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L152) one for the **useProxy** method
+  (also see additional options [here](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/types/proxy.d.ts#L24)).
 
 The usage of these methods is very similar - each takes two parameters, the first of which is the configuration data itself, and the second is additional options.
 The fingerprint and proxy will not be changed unless the appropriate method is used. In this case, all settings related to browser fingerprinting will remain at their original values.
@@ -433,7 +433,7 @@ plugin.useFingerprint(fingerprint);
 await plugin.launch();
 ```
 
-All possible settings for **fetch** method, as well as their descriptions, you can find [here](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/types/fetch.d.ts#L35).
+All possible settings for **fetch** method, as well as their descriptions, you can find [here](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/types/fetch.d.ts#L35).
 
 The special `current` value can be used to filter fingerprints by browser version - in this case, the version installed for the plugin will be used.
 It can be very convenient as the browser and fingerprint versions will be exactly the same and you don't have to enter the exact values in multiple places.
@@ -460,10 +460,10 @@ await writeFile('fingerprint.json', fingerprint);
 plugin.useFingerprint(await readFile('fingerprint.json', 'utf8'));
 ```
 
-You can learn more about the options directly when adding these methods - just use the built-in [annotations](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L214).
+You can learn more about the options directly when adding these methods - just use the built-in [annotations](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L214).
 
-You can use any [tags](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/types/fetch.d.ts#L13), filters
-(e.g. [time](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/types/fetch.d.ts#L6) limit) and settings if you have a service key.
+You can use any [tags](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/types/fetch.d.ts#L13), filters
+(e.g. [time](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/types/fetch.d.ts#L6) limit) and settings if you have a service key.
 
 If you specify an empty string as the first argument for the `fetch` or the `setServiceKey` method, the free version will be used.
 For a free version you won't be able to use other tags than the default ones, as well as some other filters:
@@ -531,8 +531,8 @@ After launching a browser with your profile, the fingerprint and proxy data you 
 This setting itself is saved between browser launches, that is, it behaves in the same way as other similar methods.
 To run different profiles, you need to call this method again with different values for the profile directory.
 
-You can learn more about the parameters and additional options for this method [here](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L124)
-and [here](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/types/profile.d.ts#L4).
+You can learn more about the parameters and additional options for this method [here](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L124)
+and [here](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/types/profile.d.ts#L4).
 
 #### Temporary profiles
 
@@ -570,8 +570,8 @@ plugin.useProxy('127.0.0.1:8080', {
 });
 ```
 
-You can learn more about the parameters and additional options for this method [here](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L152)
-and [here](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/types/proxy.d.ts#L24).
+You can learn more about the parameters and additional options for this method [here](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L152)
+and [here](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/types/proxy.d.ts#L24).
 
 The browser supports two types of proxies - **https** and **socks5**.
 It is better to always specify the proxy type in the address line - otherwise, **https** will be used by default.
@@ -652,7 +652,7 @@ This is a forced measure due to the presence of some critical **Windows-only** d
 
 The plugin architecture can be summarized as the following diagram:
 
-![Architecture](https://github.com/CheshireCaat/browser-with-fingerprints/raw/master/assets/plugin.jpg)
+![Architecture](https://github.com/bablosoft/browser-with-fingerprints/raw/master/assets/plugin.jpg)
 
 All packages can only work with the **Chrome** browser, which comes bundled with the libraries and loads automatically.
 The path to the executable file is defined on the plugin side and cannot be changed.
@@ -677,8 +677,8 @@ Also, there is no guarantee that each of these items will be changed in the futu
 
 Check out other ready-made plugins for popular automation frameworks that have a similar **API** and architecture:
 
-- Plugin for **selenium** - [selenium-with-fingerprints](https://github.com/CheshireCaat/selenium-with-fingerprints)
-- Plugin for **playwright** - [playwright-with-fingerprints](https://github.com/CheshireCaat/playwright-with-fingerprints)
+- Plugin for **selenium** - [selenium-with-fingerprints](https://github.com/bablosoft/selenium-with-fingerprints)
+- Plugin for **playwright** - [playwright-with-fingerprints](https://github.com/bablosoft/playwright-with-fingerprints)
 
 Also check out [BAS](https://bablosoft.com/shop/BrowserAutomationStudio) - a great alternative to automate the **Chrome** browser without programming skills.
 It also supports fingerprint substitution, has simple and powerful multithreading and other advantages.
@@ -687,19 +687,19 @@ It also supports fingerprint substitution, has simple and powerful multithreadin
 
 Here you can find a brief description of methods and classes, as well as links to them.
 
-#### [Tag](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/types/fetch.d.ts#L13)
+#### [Tag](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/types/fetch.d.ts#L13)
 
 Describes a tag value that can be used to filter fingerprints.
 
 ---
 
-#### [Time](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/types/fetch.d.ts#L6)
+#### [Time](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/types/fetch.d.ts#L6)
 
 Describes a time limit that can be used to filter fingerprints.
 
 ---
 
-#### [Version](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L16)
+#### [Version](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L16)
 
 Describes an object that provides complete information about the available browser version.
 
@@ -715,7 +715,7 @@ Create a separate plugin instance using the provided **puppeteer** compatible br
 
 ---
 
-#### [plugin.versions(format?)](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L64)
+#### [plugin.versions(format?)](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L64)
 
 - `format` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** The output format of the returned result.
 
@@ -725,9 +725,9 @@ Get a list of all available browser versions.
 
 ---
 
-#### [plugin.spawn(options?)](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L250)
+#### [plugin.spawn(options?)](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L250)
 
-- `options` **[Options](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/plugin/launcher/index.d.ts#L54)?** Launcher options that only apply to the browser when using the `spawn` method.
+- `options` **[Options](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/plugin/launcher/index.d.ts#L54)?** Launcher options that only apply to the browser when using the `spawn` method.
 
 Returns: **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;Browser>** Promise which resolves to a browser instance.
 
@@ -745,9 +745,9 @@ Launches **puppeteer** and launches a browser instance with given arguments and 
 
 ---
 
-#### [plugin.fetch(options?)](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L214)
+#### [plugin.fetch(options?)](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L214)
 
-- `options` **[FetchOptions](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/types/fetch.d.ts#L35)?** Set of configurable options for getting a browser fingerprint.
+- `options` **[FetchOptions](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/types/fetch.d.ts#L35)?** Set of configurable options for getting a browser fingerprint.
 
 Returns: **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)&lt;string>** Promise which resolves to a fingerprint string.
 
@@ -755,7 +755,7 @@ Obtain a fingerprint using the specified service key and additional options.
 
 ---
 
-#### [plugin.useBrowserVersion(version)](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L175)
+#### [plugin.useBrowserVersion(version)](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L175)
 
 - `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Version value as a string.
 
@@ -765,10 +765,10 @@ Set the current browser version used by the plugin instance.
 
 ---
 
-#### [plugin.useProxy(value?, options?)](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L152)
+#### [plugin.useProxy(value?, options?)](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L152)
 
 - `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Proxy value as a string.
-- `options` **[ProxyOptions](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/types/proxy.d.ts#L24)?** Set of configurable options for applying a proxy.
+- `options` **[ProxyOptions](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/types/proxy.d.ts#L24)?** Set of configurable options for applying a proxy.
 
 Returns: **this** The same plugin instance with an updated settings (for optional chaining).
 
@@ -776,10 +776,10 @@ Set the proxy settings using the specified proxy as a string and additional opti
 
 ---
 
-#### [plugin.useProfile(value?, options?)](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L124)
+#### [plugin.useProfile(value?, options?)](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L124)
 
 - `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Profile value as a string.
-- `options` **[ProfileOptions](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/types/profile.d.ts#L4)?** Set of configurable options for applying a profile.
+- `options` **[ProfileOptions](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/types/profile.d.ts#L4)?** Set of configurable options for applying a profile.
 
 Returns: **this** The same plugin instance with an updated settings (for optional chaining).
 
@@ -787,10 +787,10 @@ Set the profile settings using the specified profile as a string and additional 
 
 ---
 
-#### [plugin.useFingerprint(value?, options?)](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L94)
+#### [plugin.useFingerprint(value?, options?)](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L94)
 
 - `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Fingerprint value as a string.
-- `options` **[FingerprintOptions](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/types/fingerprint.d.ts#L4)?** Set of configurable options for applying a fingerprint.
+- `options` **[FingerprintOptions](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/types/fingerprint.d.ts#L4)?** Set of configurable options for applying a fingerprint.
 
 Returns: **this** The same plugin instance with an updated settings (for optional chaining).
 
@@ -798,7 +798,7 @@ Set the fingerprint settings using the specified fingerprint as a string and add
 
 ---
 
-#### [plugin.setWorkingFolder(folder)](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L301)
+#### [plugin.setWorkingFolder(folder)](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L301)
 
 - `folder` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The working folder that the plugin engine will use.
 
@@ -806,7 +806,7 @@ Set the working folder that the plugin uses to work with the engine.
 
 ---
 
-#### [plugin.setRequestTimeout(timeout)](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L267)
+#### [plugin.setRequestTimeout(timeout)](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L267)
 
 - `timeout` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** The request timeout that the plugin engine will use.
 
@@ -814,7 +814,7 @@ Set the timeout that the plugin uses when executing requests (pass `0` to disabl
 
 ---
 
-#### [plugin.setEngineTimeout(timeout)](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L284)
+#### [plugin.setEngineTimeout(timeout)](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L284)
 
 - `timeout` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** The engine timeout that the plugin engine will use.
 
@@ -822,7 +822,7 @@ Set the timeout that the plugin uses when fetching engine (pass `0` to disable i
 
 ---
 
-#### [plugin.setServiceKey(key)](https://github.com/CheshireCaat/browser-with-fingerprints/blob/master/src/index.d.ts#L318)
+#### [plugin.setServiceKey(key)](https://github.com/bablosoft/browser-with-fingerprints/blob/master/src/index.d.ts#L318)
 
 - `key` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The service key for obtaining and applying a fingerprint.
 
@@ -832,7 +832,7 @@ Set the fingerprint service key for all plugin methods that require it.
 
 ## Troubleshooting
 
-If you encounter any issue or bug, please use the [issues](https://github.com/CheshireCaat/puppeteer-with-fingerprints/issues) section of the repository.
+If you encounter any issue or bug, please use the [issues](https://github.com/bablosoft/puppeteer-with-fingerprints/issues) section of the repository.
 
 Please describe the problem in as much detail as possible when creating tickets - indicate the sequence of actions (steps) to repeat the problem, error output, and so on.
 
@@ -869,4 +869,4 @@ You can define it in any way convenient for you, but by default variables are re
 
 ## License
 
-Copyright © 2025, [CheshireCaat](https://github.com/CheshireCaat). Released under the [MIT](LICENSE.md) license.
+Copyright © 2025, [bablosoft](https://github.com/bablosoft). Released under the [MIT](LICENSE.md) license.
